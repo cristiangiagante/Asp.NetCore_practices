@@ -58,7 +58,7 @@ namespace aspnetcore_hello
         }
         public Product GetProductById(int id)
         {
-            return (Product)from product in ProductList where product.ID.Equals(id) select product;
+            return (from product in ProductList where product.ID.Equals(id) select product).FirstOrDefault();
         }
 
         public List<Product> GetProducts()
