@@ -1,4 +1,4 @@
-﻿
+﻿@model List<aspnetcore_hello.Models.Product>
 @{
     Layout = null;
 }
@@ -8,8 +8,42 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Product List</title>
 </head>
 <body>
+    <h1>Products List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Units In Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.ID
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Category
+                    </td>
+                    <td>
+                        @item.Price
+                    </td>
+                    <td>
+                        @item.UnitsInStock
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </body>
 </html>
